@@ -3,8 +3,8 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 var hangar = new Buffer(256)
-hangar.readfileSync('index.html')
 
+hangar.readFileSync('index.html')
 
 app.get('/', function(request, response) {
   response.send(hangar.toString());
