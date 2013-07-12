@@ -2,12 +2,13 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var hangar = require('hangar');
+var fs = require('fs');
 
-hangar.readFileSync('index.html')
+var indbuf = fs.readFileSync('index.html');
+
 
 app.get('/', function(request, response) {
-  response.send(hangar.toString());
+  response.send(indbuf.toString());
 });
 
 var port = process.env.PORT || 5000;
