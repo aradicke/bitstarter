@@ -2,7 +2,7 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var hangar = new Buffer(256)
+var hangar = require('hangar');
 
 hangar.readFileSync('index.html')
 
